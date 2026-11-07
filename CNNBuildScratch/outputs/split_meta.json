@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "source": "input/Cleaned Dataset pre-split folders (train/validation/test), used as-is",
+  "class_counts": {
+    "train": {
+      "golden_retriever": 700,
+      "Cardigan": 700,
+      "Labrador_retriever": 700,
+      "French_bulldog": 700
+    },
+    "val": {
+      "Labrador_retriever": 150,
+      "Cardigan": 150,
+      "golden_retriever": 150,
+      "French_bulldog": 150
+    },
+    "test": {
+      "golden_retriever": 150,
+      "Labrador_retriever": 150,
+      "French_bulldog": 150,
+      "Cardigan": 150
+    }
+  },
+  "mean": [
+    0.5261064171791077,
+    0.4858545660972595,
+    0.4366661310195923
+  ],
+  "std": [
+    0.25265783071517944,
+    0.24950776994228363,
+    0.2556225657463074
+  ],
+  "note": "Official pre-split folders used as-is; no re-splitting. Augmentation is applied only in the training DataLoader, never written to disk."
+}

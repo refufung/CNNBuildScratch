@@ -1,0 +1,61 @@
+{
+  "method": "one-vs-rest ROC; per-class Youden J = TPR-FPR on validation TTA",
+  "decision_rule": "predict argmax(p - thr); if no class passes thr, fall back to argmax(p)",
+  "seeds": [
+    42
+  ],
+  "classes": [
+    {
+      "class_index": 0,
+      "class_name": "French_bulldog",
+      "threshold": 0.17633798718452454,
+      "auc": 0.9728592592592592,
+      "tpr_at_threshold": 0.9466666666666667,
+      "fpr_at_threshold": 0.08888888888888889,
+      "youden_j": 0.8577777777777778
+    },
+    {
+      "class_index": 1,
+      "class_name": "Cardigan",
+      "threshold": 0.24962806701660156,
+      "auc": 0.9903407407407407,
+      "tpr_at_threshold": 0.9533333333333334,
+      "fpr_at_threshold": 0.03333333333333333,
+      "youden_j": 0.92
+    },
+    {
+      "class_index": 2,
+      "class_name": "Labrador_retriever",
+      "threshold": 0.28829580545425415,
+      "auc": 0.9675407407407408,
+      "tpr_at_threshold": 0.88,
+      "fpr_at_threshold": 0.09555555555555556,
+      "youden_j": 0.7844444444444445
+    },
+    {
+      "class_index": 3,
+      "class_name": "golden_retriever",
+      "threshold": 0.42615798115730286,
+      "auc": 0.9867851851851852,
+      "tpr_at_threshold": 0.9466666666666667,
+      "fpr_at_threshold": 0.044444444444444446,
+      "youden_j": 0.9022222222222223
+    }
+  ],
+  "validation": {
+    "argmax_acc": 0.8783333333333333,
+    "argmax_macro_f1": 0.8779167334170497,
+    "thresholded_acc": 0.8783333333333333,
+    "thresholded_macro_f1": 0.8782605269136918
+  },
+  "test": {
+    "argmax_acc": 0.865,
+    "argmax_macro_f1": 0.8642107497753816,
+    "thresholded_acc": 0.88,
+    "thresholded_macro_f1": 0.8793654175902288
+  },
+  "artifacts": {
+    "roc_png": "C:\\Users\\f5421441\\Downloads\\CNNBuildScratch\\CNNBuildScratch\\outputs\\roc_val.png",
+    "thresholds_json": "C:\\Users\\f5421441\\Downloads\\CNNBuildScratch\\CNNBuildScratch\\outputs\\roc_thresholds.json"
+  }
+}

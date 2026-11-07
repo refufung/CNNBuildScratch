@@ -1,0 +1,104 @@
+{
+  "config": {
+    "epochs": 150,
+    "seeds": [
+      42,
+      1337,
+      2025
+    ],
+    "batch_size": 32,
+    "lr": 0.001,
+    "wd": 0.05,
+    "warmup_epochs": 5,
+    "dropout": 0.3,
+    "label_smoothing": 0.1,
+    "mixup_alpha": 0.2,
+    "cutmix_alpha": 1.0,
+    "mix_prob": 0.5,
+    "ema_decay": 0.999,
+    "trained_in_notebook": false
+  },
+  "device": "mps",
+  "class_counts": {
+    "train": {
+      "French_bulldog": 700,
+      "Cardigan": 700,
+      "Labrador_retriever": 700,
+      "golden_retriever": 700
+    },
+    "val": {
+      "French_bulldog": 150,
+      "Cardigan": 150,
+      "Labrador_retriever": 150,
+      "golden_retriever": 150
+    },
+    "test": {
+      "French_bulldog": 150,
+      "Cardigan": 150,
+      "Labrador_retriever": 150,
+      "golden_retriever": 150
+    },
+    "per_class_cap": 1000
+  },
+  "runs": [
+    {
+      "seed": 42,
+      "best_val_macro_f1": 0.8240796677097664,
+      "best_epoch": 81,
+      "test_tta_acc": 0.79,
+      "test_tta_macro_f1": 0.7901148875770057
+    },
+    {
+      "seed": 1337,
+      "best_val_macro_f1": 0.8672960557337507,
+      "best_epoch": 131,
+      "test_tta_acc": 0.8466666666666667,
+      "test_tta_macro_f1": 0.846763822264686
+    },
+    {
+      "seed": 2025,
+      "best_val_macro_f1": 0.833452805350106,
+      "best_epoch": 113,
+      "test_tta_acc": 0.8416666666666667,
+      "test_tta_macro_f1": 0.8417614160089701
+    }
+  ],
+  "test_ensemble": {
+    "accuracy": 0.8283333333333334,
+    "macro_f1": 0.8283803888364139,
+    "confusion_matrix": [
+      [
+        115,
+        6,
+        25,
+        4
+      ],
+      [
+        5,
+        136,
+        5,
+        4
+      ],
+      [
+        20,
+        2,
+        115,
+        13
+      ],
+      [
+        2,
+        6,
+        11,
+        131
+      ]
+    ],
+    "class_names": [
+      "French_bulldog",
+      "Cardigan",
+      "Labrador_retriever",
+      "golden_retriever"
+    ],
+    "n_seeds": 3,
+    "tta": "mean softmax over {224, hflip, 256-center-crop, hflip} x seeds"
+  }
+}

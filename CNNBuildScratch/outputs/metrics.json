@@ -1,0 +1,144 @@
+{
+  "config": {
+    "epochs": 150,
+    "seeds": [
+      42
+    ],
+    "batch_size": 32,
+    "lr": 0.001,
+    "wd": 0.05,
+    "warmup_epochs": 5,
+    "dropout": 0.3,
+    "label_smoothing": 0.1,
+    "mixup_alpha": 0.2,
+    "cutmix_alpha": 1.0,
+    "mix_prob": 0.5,
+    "ema_decay": 0.999,
+    "num_workers": 0,
+    "smoke": false,
+    "max_batches": 0,
+    "eval_only": false,
+    "early_stop_patience": 12
+  },
+  "device": "cuda",
+  "class_counts": {
+    "train": {
+      "golden_retriever": 700,
+      "Cardigan": 700,
+      "Labrador_retriever": 700,
+      "French_bulldog": 700
+    },
+    "val": {
+      "Labrador_retriever": 150,
+      "Cardigan": 150,
+      "golden_retriever": 150,
+      "French_bulldog": 150
+    },
+    "test": {
+      "golden_retriever": 150,
+      "Labrador_retriever": 150,
+      "French_bulldog": 150,
+      "Cardigan": 150
+    }
+  },
+  "runs": [
+    {
+      "seed": 42,
+      "best_val_macro_f1": 0.8531228175850268,
+      "best_epoch": 105,
+      "train_seconds": 2128.9628551006317
+    }
+  ],
+  "validation": {
+    "seeds": [
+      {
+        "seed": 42,
+        "val_tta_acc": 0.8783333333333333,
+        "val_tta_macro_f1": 0.8779167334170497
+      }
+    ],
+    "val_ensemble": {
+      "accuracy": 0.8783333333333333,
+      "macro_f1": 0.8779167334170497,
+      "confusion_matrix": [
+        [
+          124,
+          5,
+          20,
+          1
+        ],
+        [
+          5,
+          139,
+          0,
+          6
+        ],
+        [
+          11,
+          3,
+          124,
+          12
+        ],
+        [
+          4,
+          2,
+          4,
+          140
+        ]
+      ],
+      "class_names": [
+        "French_bulldog",
+        "Cardigan",
+        "Labrador_retriever",
+        "golden_retriever"
+      ],
+      "n_seeds": 1,
+      "tta": "mean softmax over {224, hflip, 256-center-crop, hflip} x seeds"
+    }
+  },
+  "seeds": [
+    {
+      "seed": 42,
+      "test_tta_acc": 0.865,
+      "test_tta_macro_f1": 0.8642107497753816
+    }
+  ],
+  "test_ensemble": {
+    "accuracy": 0.865,
+    "macro_f1": 0.8642107497753816,
+    "confusion_matrix": [
+      [
+        121,
+        7,
+        18,
+        4
+      ],
+      [
+        3,
+        138,
+        4,
+        5
+      ],
+      [
+        16,
+        2,
+        120,
+        12
+      ],
+      [
+        2,
+        4,
+        4,
+        140
+      ]
+    ],
+    "class_names": [
+      "French_bulldog",
+      "Cardigan",
+      "Labrador_retriever",
+      "golden_retriever"
+    ],
+    "n_seeds": 1,
+    "tta": "mean softmax over {224, hflip, 256-center-crop, hflip} x seeds"
+  }
+}
